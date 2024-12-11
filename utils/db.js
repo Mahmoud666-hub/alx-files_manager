@@ -9,10 +9,10 @@ const url = `mongodb://${HOST}:${PORT}`;
 class DBClient {
   constructor() {
     this.client = new MongoClient(url, { useUnifiedTopology: true, useNewUrlParser: true });
-    this.client.connect().then(function() {
+    this.client.connect().then(() => {
       this.db = this.client.db(`${DATABASE}`);
-    }).catch((erro) => {
-      console.log(erro);
+    }).catch((err) => {
+      console.log(err);
     });
   }
 
